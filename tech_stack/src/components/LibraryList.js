@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, FlatList } from 'react-native'; 
+import { FlatList } from 'react-native'; 
 import { connect } from 'react-redux';
 import ListItem from './ListItem';
 
@@ -13,7 +13,7 @@ class LibraryList extends Component {
       <FlatList
         data={this.props.libraries}
         renderItem={this.renderItem}
-        keyExtractor={(library) => library.id}
+        keyExtractor={library => library.id}
       />
     );
   }

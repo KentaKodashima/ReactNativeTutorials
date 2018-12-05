@@ -9,17 +9,17 @@ class ListItem extends Component {
   renderDescription() {
     const { library, selectedLibraryId } = this.props;
 
-    if (this.props.library.id === selectedLibraryId) {
+    if (library.item.id === selectedLibraryId) {
       return (
-        <Text>{library.description}</Text>
+        <Text>{library.item.description}</Text>
       );
     }
-  };
+  }
 
   render() {
     const { titleStyle } = styles;
-    const { id, title } = this.props.library;
-
+    const { id, title } = this.props.library.item;
+    console.log(this.props.library)
     return (
       <TouchableWithoutFeedback 
         onPress={() => this.props.selectedLibrary(id)}
