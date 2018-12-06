@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { 
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+  LayoutAnimation
+} from 'react-native';
 import { connect } from 'react-redux';
 import { CardSection } from './common';
 // Take all actions from '../Action' and assign it to the variable called 'actions'
 import * as actions from '../Actions';
 
 class ListItem extends Component {
-  renderDescription() {
-    const { library, selectedLibraryId } = this.props;
+  componentWillUpdate() {
+    LayoutAnimation.spring();
+  }
 
-    if (library.item.id === selectedLibraryId) {
+  renderDescription() {
+    const { library, expanded } = this.props;
+
+    if (expanded) {
       return (
-        <Text>{library.item.description}</Text>
+        <CardSection>
+          <Text style={{ flex: 1 }}>
+            {library.item.description}
+          </Text>
+        </CardSection>
       );
     }
   }
@@ -44,8 +58,12 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapsStateToProps = state => {
-  return { selectedLibraryId: state.selectedLibraryId };
+// ownProps is the name convention
+// It points to ListItem here
+const mapsStateToProps = (state, ownProps) => {
+  const expanded = state.selectedLibraryId === ownProps.library.item.id;
+
+  return { expanded };
 };
 
 // 1: mapsStateToProps

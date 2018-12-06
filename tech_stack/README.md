@@ -31,6 +31,13 @@ If the action's type is 'split', it will take a string of characters and turn it
 State:
 ['a', 'b', 'c', 'd']
 
+### Provider
+Facilitating communnication between React and Redux. Provider is what connects to all those different connect tags. It makes sure that all those connect tags can get access to the store, grab our redux state and then pass it off to indivisual components.
+A store with `createStore()` needs to be passed into the Provider tag.
+
+### mapStateToProps
+Our ability to interface from our application level state down to the component level. Plucking properties off our state object and injecting them into our components.
+
 ### Connect helper
 Connect helper is a feature of react-redux library. It is a glue of React and Redux. It is a tool to explicitly connect Components to the Redux Store to get State from Redux.
 
