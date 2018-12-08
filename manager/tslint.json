@@ -16,7 +16,7 @@
         "member-access": [true, "no-public"],
         "no-console": false,
         "no-empty-interface": false,
-        "interface-name": [false, "always-prefix"]
+		"interface-name": [false, "always-prefix"]
     },
     "rulesDirectory": []
 }
