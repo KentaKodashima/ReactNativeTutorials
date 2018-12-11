@@ -8,7 +8,7 @@ import LoginForm from './components/LoginForm'
 
 import keys from './keys'
 
-class App extends React.Component<{}, {}> {
+class App extends Component {
   componentWillMount() {
     const config = {
       apiKey: keys.apiKey,

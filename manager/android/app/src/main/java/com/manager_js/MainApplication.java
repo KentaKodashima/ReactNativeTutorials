@@ -1,4 +1,4 @@
-package com.manager;
+package com.manager_js;
 
 import android.app.Application;
 
