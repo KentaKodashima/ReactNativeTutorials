@@ -17,7 +17,8 @@
     "metro-react-native-babel-preset": "0.50.0",
     "react-redux": "^6.0.0",
     "react-test-renderer": "16.6.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "jest": {
     "preset": "react-native"

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
+import { StyleSheet, SafeAreaView } from 'react-native'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import reducers from './reducers'
 import firebase from 'firebase'
+import ReduxThunk from 'redux-thunk'
 import LoginForm from './components/LoginForm'
 
 import keys from './keys'
@@ -23,8 +24,12 @@ class App extends Component {
   }
 
   render() {
+    // 1st: reducers
+    // 2nd: Any initial state we might want to pass to our Redux app. Pre-population
+    // 3rd: Store enhancer, adding additional functionality to the store
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk))
     return (
-      <Provider store={createStore(reducers)}>
+      <Provider store={store}>
         <SafeAreaView>
           <LoginForm />
         </SafeAreaView>
