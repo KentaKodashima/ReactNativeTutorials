@@ -27,7 +27,7 @@ User types something
 ### Asyncronous Action Creator
 
 ### Redux Thunk
-Redux th
+> Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests. - [Redux Thunk Github](https://github.com/reduxjs/redux-thunk)
 
 #### Default Action Creator Rules
  - Action creators are functions

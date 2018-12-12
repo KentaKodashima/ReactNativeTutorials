@@ -42,10 +42,9 @@ class LoginForm extends Component {
         </CardSection>
 
         <CardSection>
-          <Button 
-            onPress={this.onButtonPress.bind(this)}
-            title="Login"
-          />
+          <Button onPress={this.onButtonPress.bind(this)} >
+            Login
+          </Button>
         </CardSection>
       </Card>
     )
