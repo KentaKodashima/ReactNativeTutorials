@@ -39,5 +39,12 @@ User types something
  - Must return a function
  - This function will be called with 'dispatch'
 
+### Navigation Using react-native-router-flux Library
+#### Scene
+- key: Identify the particular screen to show by key's value (ex: "login", Actions.login())
+- component: Component name to show (ex: 'LoginForm')
+- title: Nav bar's title
+- initial: Put 'initial' to the root view controller
+
 ### Tips to use when I code
 - types.js: Contains const of action.type names to avoid typos
